@@ -1,7 +1,6 @@
-// src/pages/SignupPage.js
 import React, { useState } from 'react';
 import axios from 'axios';
-import Form from '../components/form';
+import Form from '../components/signupform';
 
 const SignupPage = () => {
     const [username, setUsername] = useState('');

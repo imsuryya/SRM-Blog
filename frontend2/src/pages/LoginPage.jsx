@@ -1,8 +1,7 @@
-// src/pages/LoginPage.js
 import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-import Form from '../components/form';
+import Form from '../components/loginform';  // Adjust the import path if needed
 
 const LoginPage = () => {
     const [username, setUsername] = useState('');
@@ -12,7 +11,7 @@ const LoginPage = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('http://localhost:5000/api/auth/login', { username, password });
+            await axios.post('http://localhost:5000/api/auth/login', { username, password });
             localStorage.setItem('user', JSON.stringify({ username }));
             alert('Login successful!');
             navigate('/');
